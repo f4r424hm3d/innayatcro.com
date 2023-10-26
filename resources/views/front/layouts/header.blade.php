@@ -60,15 +60,9 @@
                   <li><a href="{{ url('/about-us') }}/">About us</a></li>
                   <li class="menu-item-has-children"><a href="{{ url('services') }}/">Services</a>
                     <ul>
-                      <li><a href="pre-clinical-operations">Pre-clinical Operations</a></li>
-                      <li><a href="clinical-operation">Clinical Operation</a></li>
-                      <li><a href="medical-writing">Medical Writing</a></li>
-                      <li><a href="pharmacovigilance">Pharmacovigilance</a></li>
-                      <li><a href="quality-assurance">Quality Assurance</a></li>
-                      <li><a href="medical-affairs">Medical Affairs</a></li>
-                      <li><a href="biostatistics-programming">Biostatistics & Programming</a></li>
-                      <li><a href="regulatory-affairs">Regulatory Affairs</a></li>
-                      <li><a href="data-management">Data Management</a></li>
+                      @foreach ($services as $row)
+                        <li><a href="{{ url($row->service_slug) }}">{{ $row->service_name }}</a></li>
+                      @endforeach
                     </ul>
                   </li>
                   <li><a href="{{ url('/contact-us') }}/">Contact us</a></li>

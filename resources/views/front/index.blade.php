@@ -9,7 +9,7 @@
     <div class="hero-slider-full owl-carousel">
 
       <div class="hero-slider-item h-slider d-flex align-items-center"
-        style="background-image: url('assets/img/slider/1.webp');">
+        style="background-image: url('{{ url('/web') }}/assets/img/slider/1.webp');">
         <div class="overlay"></div>
         <div class="shap-img">
           <img class="shap1 heartbeat" src="{{ url('/web') }}/assets/img/shap/shap5.png" alt="shap">
@@ -32,7 +32,7 @@
       </div>
 
       <div class="hero-slider-item h-slider d-flex align-items-center"
-        style="background-image: url('assets/img/slider/2.webp');">
+        style="background-image: url('{{ url('/web') }}/assets/img/slider/2.webp');">
         <div class="overlay"></div>
         <div class="shap-img">
           <img class="shap1 heartbeat" src="{{ url('/web') }}/assets/img/shap/shap5.png" alt="shap">
@@ -55,7 +55,7 @@
       </div>
 
       <div class="hero-slider-item h-slider d-flex align-items-center"
-        style="background-image: url('assets/img/slider/3.webp');">
+        style="background-image: url('{{ url('/web') }}/assets/img/slider/3.webp');">
         <div class="overlay"></div>
         <div class="shap-img">
           <img class="shap1 heartbeat" src="{{ url('/web') }}/assets/img/shap/shap5.png" alt="shap">
@@ -77,7 +77,7 @@
       </div>
 
       <div class="hero-slider-item h-slider d-flex align-items-center"
-        style="background-image: url('assets/img/slider/4.webp');">
+        style="background-image: url('{{ url('/web') }}/assets/img/slider/4.webp');">
         <div class="overlay"></div>
         <div class="shap-img">
           <img class="shap1 heartbeat" src="{{ url('/web') }}/assets/img/shap/shap5.png" alt="shap">

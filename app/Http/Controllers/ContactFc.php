@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ContactFc extends Controller
 {
   public function index(Request $request)
   {
-    return view('front.contact-us');
+    $services = Service::all();
+    $data = compact('services');
+    return view('front.contact-us')->with($data);
   }
   public function thankYou(Request $request)
   {

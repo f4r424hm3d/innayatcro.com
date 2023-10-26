@@ -1,10 +1,15 @@
   @php
     use App\Models\Service;
-    $footerTreat = Service::limit(8)->get();
+    $footerSer1 = Service::offset(0)
+        ->limit(5)
+        ->get();
+    $footerSer2 = Service::offset(5)
+        ->limit(5)
+        ->get();
   @endphp
   <!-- Start Footer Area -->
   <footer class="footer">
-    <div class="footer-top pt-70 pb-50" style="background-image: url('assets/img/footer-bg.png');">
+    <div class="footer-top pt-70 pb-50" style="background-image: url('{{ url('/web') }}/assets/img/footer-bg.png');">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
@@ -47,7 +52,9 @@
             <div class="footer-widegts-single">
               <h3 class="title">Services</h3>
               <ul>
-                <li><a href="pre-clinical-operations.html">Pre-clinical Operations</a></li>
+                @foreach ($footerSer1 as $row)
+                  <li><a href="{{ url($row->service_slug) }}">{{ $row->service_name }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>
@@ -56,7 +63,9 @@
             <div class="footer-widegts-single mtmn">
               <h3 class="title hidden-xs">&nbsp;</h3>
               <ul>
-                <li><a href="medical-affairs.html">Medical Affairs</a></li>
+                @foreach ($footerSer2 as $row)
+                  <li><a href="{{ url($row->service_slug) }}">{{ $row->service_name }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>

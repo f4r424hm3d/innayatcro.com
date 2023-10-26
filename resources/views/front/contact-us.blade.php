@@ -4,7 +4,8 @@
 @endpush
 @section('main-section')
   <!-- Start Bredcrumb Area -->
-  <section class="breadcumb-area pt-70 pb-70" style="background-image: url('assets/img/breadcrumb.png')">
+  <section class="breadcumb-area pt-70 pb-70"
+    style="background-image: url('{{ url('/web') }}/assets/img/breadcrumb.png')">
     <div class="container">
       <h2>Contact Us</h2>
       <ul>
@@ -49,59 +50,73 @@
                 <h2>Have Questions? <br> Get in Touch!</h2>
               </div>
               <div class="get-appointment-form">
-                <form id="contact-form" action="" method="POST">
+                <form id="contact-for" action="{{ url('inquiry/contact-us/') }}/" method="POST">
+                  @csrf
+                  <input type="hidden" name="source" value="contact-us">
+                  <input type="hidden" name="source_path" value="{{ URL::full() }}">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="single-field">
                         <label for="name">Your Name</label>
-                        <input type="text" placeholder="Write your name" name="name" id="name">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="single-field">
-                        <label for="email">Email</label>
-                        <input type="email" placeholder="example@gmail.com" name="email" id="email">
+                        <input type="text" placeholder="Write your name" name="name" id="name"
+                          value="{{ old('name') }}">
+                        @error('name')
+                          <span class="text-danger">{{ $message }}</span>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="single-field">
                         <label for="phone">Phone Number</label>
-                        <input type="text" placeholder="+66 555 666 888 22" name="phone" id="phone">
+                        <input type="text" placeholder="+66 555 666 888 22" name="mobile" id="mobile"
+                          value="{{ old('mobile') }}">
+                        @error('mobile')
+                          <span class="text-danger">{{ $message }}</span>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="single-field">
-                        <label for="phone">Select Service</label>
-                        <select name="depname">
-                          <option>Select</option>
-                          <option value="">Pre-clinical Operations</option>
-                          <option value="">Clinical Operation</option>
-                          <option value="">Medical Writing</option>
-                          <option value="">Pharmacovigilance</option>
-                          <option value="">Quality Assurance</option>
-                          <option value="">Medical Affairs</option>
-                          <option value="">Biostatistics & Programming</option>
-                          <option value="">Regulatory Affairs</option>
-                          <option value="">Data Management</option>
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="example@gmail.com" name="email" id="email"
+                          value="{{ old('email') }}">
+                        @error('email')
+                          <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="single-field">
+                        <label for="service_id">Email</label>
+                        <select name="service_id" id="service_id">
+                          <option>Select Service</option>
+                          @foreach ($services as $row)
+                            <option value="{{ $row->id }}">{{ $row->service_name }}</option>
+                          @endforeach
                         </select>
                       </div>
                     </div>
                     <div class="col-sm-12">
                       <div class="single-field">
-                        <label for="phone">Your Message</label>
-                        <textarea name="message" placeholder="Write Your Message Here" id="message"></textarea>
+                        <label for="message">Email</label>
+                        <textarea id="message" name="message" placeholder="Write Your Message" id="message">{{ old('message') }}</textarea>
+                        @error('message')
+                          <span class="text-danger">{{ $message }}</span>
+                        @enderror
                       </div>
                     </div>
-                    <div class="col-sm-12 mb-0">
-                      <p><span>*</span> Visit our agency or simply send us an email anytime you want. If you have any
-                        questions, please feel free to contact us.</p>
+                    <div class="col-sm-12 mb-30">
+                      <p><span>*</span> Call us 24/7 at 869-5414-5 or fill out the form below to
+                        receive a free and confidential initial consultation.</p>
                     </div>
                     <div class="col-md-5 col-sm-8">
                       <div class="single-field pt-20 pb-0">
-                        <button class="button-1">Submit Now <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="button-1" type="submit">Submit Now <i
+                            class="fa-solid fa-arrow-right"></i></button>
                       </div>
                     </div>
                   </div>
+                  <p class="ajax-response"></p>
                 </form>
               </div>
 

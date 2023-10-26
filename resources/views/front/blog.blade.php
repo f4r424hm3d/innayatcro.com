@@ -4,7 +4,8 @@
 @endpush
 @section('main-section')
   <!-- Start Bredcrumb Area -->
-  <section class="breadcumb-area pt-70 pb-70" style="background-image: url('assets/img/breadcrumb.png')">
+  <section class="breadcumb-area pt-70 pb-70"
+    style="background-image: url('{{ url('/web') }}/assets/img/breadcrumb.png')">
     <div class="container">
       <h2>News & Blog</h2>
       <ul>

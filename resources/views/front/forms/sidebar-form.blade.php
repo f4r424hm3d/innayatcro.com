@@ -30,7 +30,7 @@
 
       <div class="single-field">
         <select name="service_id" id="service_id">
-          <option>Select Treatment</option>
+          <option>Select Service</option>
           @foreach ($allTr as $row)
             <option value="{{ $row->id }}">{{ $row->service_name }}</option>
           @endforeach

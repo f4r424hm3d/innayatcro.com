@@ -10,7 +10,7 @@ define('TO_NAME', 'Mohd Faraz');
 define('BCC_EMAIL', 'farazahmad280@gmail.com');
 define('BCC_NAME', 'Mohd Faraz');
 define('CC_EMAIL', '4hm3df4r42@gmail.com');
-define('CC_NAME', 'Dr Jayabalan');
+define('CC_NAME', 'Innayat CRO');
 
 
 if (!function_exists('printArray')) {

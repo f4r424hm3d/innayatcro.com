@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Admin Login | Dr Jayabalan</title>
+  <title>Admin Login | Innayat CRO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Dr Jayabalan Britannica Overseas Education" name="description" />
+  <meta content="Innayat CRO Britannica Overseas Education" name="description" />
   <meta content="Themesbrand" name="author" />
   <!-- App favicon -->
   <link rel="shortcut icon" href="{{ url('backend/') }}/assets/images/favicon.ico" />
@@ -35,7 +35,7 @@
                 <div class="mb-4 mb-md-5 text-center">
                   <a href="{{ url('/') }}" class="d-block auth-logo">
                     <img src="{{ url('backend/') }}/assets/images/logo-sm.svg" alt="" height="28" />
-                    <span class="logo-txt">Dr Jayabalan</span>
+                    <span class="logo-txt">Innayat CRO</span>
                   </a>
                 </div>
                 <!-- NOTIFICATION FIELD START -->
@@ -100,7 +100,7 @@
                     <script>
                       document.write(new Date().getFullYear());
                     </script>
-                    Dr Jayabalan
+                    Innayat CRO
                   </p>
                 </div>
               </div>

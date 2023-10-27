@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   @stack('title')
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Dr Jayabalan" name="description" />
+  <meta content="Innayat CRO" name="description" />
   <meta content="Themesbrand" name="author" />
   <!-- choices css -->
   <link href="{{ url('backend/') }}/assets/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet"
@@ -88,7 +88,7 @@
               </span>
               <span class="logo-lg">
                 <img src="{{ url('backend/') }}/assets/images/logo-sm.svg" alt="" height="24" />
-                <span class="logo-txt">Dr Jayabalan</span>
+                <span class="logo-txt">Innayat CRO</span>
               </span>
             </a>
 
@@ -98,7 +98,7 @@
               </span>
               <span class="logo-lg">
                 <img src="{{ url('backend/') }}/assets/images/logo-sm.svg" alt="" height="24" />
-                <span class="logo-txt">Dr Jayabalan</span>
+                <span class="logo-txt">Innayat CRO</span>
               </span>
             </a>
           </div>

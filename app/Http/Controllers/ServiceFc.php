@@ -25,14 +25,17 @@ class ServiceFc extends Controller
 
     $wrdseo = ['url' => 'service-details'];
     $dseo = DynamicPageSeo::where($wrdseo)->first();
+    // printArray($dseo);
+    // die;
 
-    $sub_slug = $service->treatment_name;
+    $sub_slug = $service->service_name;
     $site = 'drjayabalan.net';
 
     $tagArray = ['title' => $sub_slug, 'currentmonth' => date('M'), 'currentyear' => date('Y'), 'site' => $site];
 
     $meta_title = $service->meta_title == '' ? $dseo->meta_title : $service->meta_title;
     $meta_title = replaceTag($meta_title, $tagArray);
+    //die;
 
     $meta_keyword = $service->meta_keyword == '' ? $dseo->meta_keyword : $service->meta_keyword;
     $meta_keyword = replaceTag($meta_keyword, $tagArray);

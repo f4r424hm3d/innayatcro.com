@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @push('title')
-  <title>Dr Jayabalan : Admin Dashboard</title>
+  <title>Innayat CRO : Admin Dashboard</title>
 @endpush
 @section('main-section')
   <div class="page-content">

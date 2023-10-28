@@ -266,6 +266,12 @@
                   </div>
                 </div>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle arrow-none" href="{{ aurl('upload-files') }}"
+                  id="topnav-dashboard" role="button" title="Dashboard">
+                  <i data-feather="file-text"></i> Upload Files
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

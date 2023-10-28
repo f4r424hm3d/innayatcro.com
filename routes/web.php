@@ -40,6 +40,7 @@ use App\Http\Controllers\admin\BlogCategoryC;
 use App\Http\Controllers\admin\DynamicPageSeoC;
 use App\Http\Controllers\admin\GalleryC;
 use App\Http\Controllers\admin\ServiceC;
+use App\Http\Controllers\admin\UploadFilesC;
 use App\Http\Controllers\AppointmentFc;
 use App\Http\Controllers\BlogFc;
 use App\Http\Controllers\ContactFc;
@@ -244,6 +245,14 @@ Route::middleware(['adminLoggedIn'])->group(function () {
       Route::get('/delete/{id}/', [UserC::class, 'delete']);
       Route::get('/update/{id}/', [UserC::class, 'index']);
       Route::post('/update/{id}/', [UserC::class, 'update']);
+    });
+    Route::prefix('/upload-files')->group(function () {
+      Route::get('/', [UploadFilesC::class, 'index']);
+      Route::get('/get-data', [UploadFilesC::class, 'getData']);
+      Route::get('/delete/{id}', [UploadFilesC::class, 'delete']);
+      Route::post('/store-ajax', [UploadFilesC::class, 'storeAjax']);
+      Route::get('/update/{id}', [UploadFilesC::class, 'index']);
+      Route::post('/update/{id}', [UploadFilesC::class, 'update']);
     });
   });
 });

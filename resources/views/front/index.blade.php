@@ -312,59 +312,44 @@
   </section>
   <!-- End Area -->
 
-  <!-- Start Blog Area -->
-  <section class="blog-area homep2 pt-110 pb-80">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center mb-50">
-          <div class="section-title">
-            <h3>Our Blogs</h3>
-            <h2 class="mb-0">Latest News & Blogs</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Single -->
-        <div class="col-lg-4 col-md-6 mb-30">
-          <div class="blog-single-item">
-            <div class="thumbnail"><img src="{{ url('/web') }}/assets/img/blog/blog1.png" alt="blog"></div>
-            <div class="content">
-              <div class="auth"><span>by Creativemela</span> <span>22 Aug 2023</span></div>
-              <h3>Fusce tincidunt commodo sapien, quis porttitor ipsum fringillaet.</h3>
-              <a class="blog-btn" href="blog-detail.html">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
+  @if ($blogs->count() > 0)
+    <!-- Start Blog Area -->
+    <section class="blog-area homep2 pt-110 pb-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-50">
+            <div class="section-title">
+              <h3>Our Blogs</h3>
+              <h2 class="mb-0">Latest News & Blogs</h2>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 mb-30">
-          <div class="blog-single-item">
-            <div class="thumbnail"><img src="{{ url('/web') }}/assets/img/blog/blog2.png" alt="blog"></div>
-            <div class="content">
-              <div class="auth"><span>by Creativemela</span> <span>22 Aug 2023</span></div>
-              <h3>Fusce tincidunt commodo sapien, quis porttitor ipsum fringillaet.</h3>
-              <a class="blog-btn" href="blog-detail.html">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="row">
+          @foreach ($blogs as $row)
+            <!-- Single -->
+            <div class="col-lg-4 col-md-6 mb-30">
+              <div class="blog-single-item">
+                <div class="thumbnail"><img src="{{ asset($row->thumbnail_path) }}" alt="blog"></div>
+                <div class="content">
+                  <div class="auth"><span>{{ $row->getCategory->category_name }}</span>
+                    <span>{{ getFormattedDate($row->created_at, 'd M, Y') }}</span>
+                  </div>
+                  <h3>{{ $row->title }}</h3>
+                  <a class="blog-btn" href="{{ url($row->slug) }}">Read more <i
+                      class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
+          @endforeach
+
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-30">
-          <div class="blog-single-item">
-            <div class="thumbnail"><img src="{{ url('/web') }}/assets/img/blog/blog3.png" alt="blog"></div>
-            <div class="content">
-              <div class="auth"><span>by Creativemela</span> <span>22 Aug 2023</span></div>
-              <h3>Fusce tincidunt commodo sapien, quis porttitor ipsum fringillaet.</h3>
-              <a class="blog-btn" href="blog-detail.html">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
+        <div class="button-area-about-footer mt-15">
+          <a class="button-1 mr-10" href="{{ url('/news') }}/">View All <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
       </div>
-
-      <div class="button-area-about-footer mt-15">
-        <a class="button-1 mr-10" href="{{ url('/news') }}/">View All <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-    </div>
-  </section>
-  <!-- End Blog Area -->
+    </section>
+    <!-- End Blog Area -->
+  @endif
 @endsection

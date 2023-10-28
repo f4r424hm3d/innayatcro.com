@@ -25,7 +25,8 @@
         <div class="col-lg-8">
           <!-- Singlepage Content -->
           <div class="singlepage-content">
-            <img class="details-singleimg" src="{{ asset($service->image_path) }}" alt="{{ $service->service_name }}"><hr/>
+            <img class="details-singleimg" src="{{ asset($service->image_path) }}" alt="{{ $service->service_name }}">
+            <hr />
 
             {!! $service->description !!}
 
@@ -44,7 +45,7 @@
                   @foreach ($services as $row)
                     <li>
                       <a href="{{ url($row->service_slug) }}">
-                        <i class="fa-solid fa-caret-right"></i> M{{ $row->service_name }}
+                        <i class="fa-solid fa-caret-right"></i> {{ $row->service_name }}
                       </a>
                     </li>
                   @endforeach

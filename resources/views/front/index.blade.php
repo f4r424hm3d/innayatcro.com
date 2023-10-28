@@ -179,7 +179,7 @@
               </p>
             </div>
             <div class="button-area-about-footer mt-15">
-              <a class="button-1 mr-10" href="clinical-operation.html">Explore Now <i
+              <a class="button-1 mr-10" href="https://www.innayatcro.com/clinical-operation">Explore Now <i
                   class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -200,7 +200,7 @@
               <h3 class="mb-2">Regulatory Affairs</h3>
               <p class="mb-15">Our Regulatory Affairs department has competency in handling multiple regulatory
                 activities from clinical trial applications.</p>
-              <a class="button-1" href="regulatory-affairs.html">Explore Now <i
+              <a class="button-1" href="https://www.innayatcro.com/regulatory-ventures">Explore Now <i
                   class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -214,7 +214,7 @@
               <h3 class="mb-2">Data Management</h3>
               <p class="mb-15">Our data management team can manage multi-center, multi-country studies in both
                 electronic and paper based format.</p>
-              <a class="button-1" href="female-infertility-management.html">Explore Now <i
+              <a class="button-1" href="https://www.innayatcro.com/data-management">Explore Now <i
                   class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -228,7 +228,7 @@
               <h3 class="mb-2">Pre-Clinical Research Services</h3>
               <p class="mb-15">INNYATCRO provides critical preclinical research data and innovative solutions through
                 the conduct of the right studies.</p>
-              <a class="button-1" href="pre-clinical-operations.html">Explore Now <i
+              <a class="button-1" href="https://www.innayatcro.com/pre-clinical-research">Explore Now <i
                   class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>

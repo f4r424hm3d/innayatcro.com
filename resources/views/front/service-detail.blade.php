@@ -10,7 +10,7 @@
       <h2>Services</h2>
       <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
-        <li>Services</li>
+        <li><a href="{{ url('/services') }}">Services</a></li>
         <li>{{ $service->service_name }}</li>
       </ul>
     </div>

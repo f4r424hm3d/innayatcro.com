@@ -46,7 +46,7 @@
         <div class="row">
           <!-- Logo -->
           <div class="col-lg-3 col-6 align-self-center">
-            <div class="logo"><a href="{{ url('/') }}/"><img src="{{ url('/web') }}/assets/img/logo.png"
+            <div class="logo"><a href="{{ url('/') }}"><img src="{{ url('/web') }}/assets/img/logo.png"
                   alt="Logo"></a></div>
           </div>
 
@@ -56,17 +56,17 @@
             <div class="menu">
               <nav>
                 <ul>
-                  <li><a href="{{ url('/') }}/">Home</a></li>
-                  <li><a href="{{ url('/about-us') }}/">About us</a></li>
-                  <li class="menu-item-has-children"><a href="{{ url('services') }}/">Services</a>
+                  <li><a href="{{ url('/') }}">Home</a></li>
+                  <li><a href="{{ url('/about-us') }}">About us</a></li>
+                  <li class="menu-item-has-children"><a href="{{ url('services') }}">Services</a>
                     <ul>
                       @foreach ($services as $row)
                         <li><a href="{{ url($row->service_slug) }}">{{ $row->service_name }}</a></li>
                       @endforeach
                     </ul>
                   </li>
-                  <li><a href="{{ url('/contact-us') }}/">Contact us</a></li>
-                  <li><a href="{{ url('/news') }}/">News & Blog</a></li>
+                  <li><a href="{{ url('/contact-us') }}">Contact us</a></li>
+                  <li><a href="{{ url('/news') }}">News & Blog</a></li>
                 </ul>
               </nav>
             </div>
@@ -92,21 +92,21 @@
       <div class="offcanvas_menu_wrapper">
         <div class="canvas_close"><a href="javascript:void()" aria-label="Menu Open"><i class="bi bi-x-lg"></i></a>
         </div>
-        <div class="mobile-logo"><a href="{{ url('/') }}/"><img src="{{ url('/web') }}/assets/img/logo.png"
+        <div class="mobile-logo"><a href="{{ url('/') }}"><img src="{{ url('/web') }}/assets/img/logo.png"
               alt="logo"></a></div>
         <div id="menu" class="text-left ">
           <ul class="offcanvas_main_menu">
-            <li><a href="{{ url('/') }}/">Home</a></li>
-            <li><a href="{{ url('/about-us') }}/">About us</a></li>
-            <li class="menu-item-has-children"><a href="{{ url('services') }}/">Services</a>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/about-us') }}">About us</a></li>
+            <li class="menu-item-has-children"><a href="{{ url('services') }}">Services</a>
               <ul class="sub-menu">
                 @foreach ($services as $row)
                   <li><a href="{{ url($row->service_slug) }}">{{ $row->service_name }}</a></li>
                 @endforeach
               </ul>
             </li>
-            <li><a href="{{ url('/contact-us') }}/">Contact us</a></li>
-            <li><a href="{{ url('/news') }}/">News & Blog</a></li>
+            <li><a href="{{ url('/contact-us') }}">Contact us</a></li>
+            <li><a href="{{ url('/news') }}">News & Blog</a></li>
           </ul>
         </div>
       </div>

@@ -39,11 +39,11 @@
             <div class="footer-widegts-single">
               <h3 class="title">Quick Links</h3>
               <ul>
-                <li><a href="{{ url('/') }}/">Home</a></li>
-                <li><a href="{{ url('/about-us') }}/">About us</a></li>
-                <li><a href="{{ url('services') }}/">Services</a></li>
-                <li><a href="{{ url('/contact-us') }}/">Contact us</a></li>
-                <li><a href="{{ url('/news') }}/">News & Blog</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/about-us') }}">About us</a></li>
+                <li><a href="{{ url('services') }}">Services</a></li>
+                <li><a href="{{ url('/contact-us') }}">Contact us</a></li>
+                <li><a href="{{ url('/news') }}">News & Blog</a></li>
               </ul>
             </div>
           </div>

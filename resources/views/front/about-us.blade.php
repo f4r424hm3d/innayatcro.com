@@ -130,124 +130,22 @@
         <div class="col-md-12">
           <div class="project-homeslide owl-carousel owl-theme">
 
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/pre-clinical-research.jpg"
-                  alt="Pre-clinical Operations">
-                <div class="project-hover"><a href="pre-clinical-operations.html"><i
-                      class="fa-solid fa-arrow-right"></i></a></div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Pre-clinical Operations</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/clinical-operation.jpg" alt="Clinical Operation">
-                <div class="project-hover"><a href="clinical-operation.html"><i class="fa-solid fa-arrow-right"></i></a>
+            @foreach ($services as $row)
+              <div class="project-single">
+                <div class="project-img">
+                  <img src="{{ asset($row->image_path) }}" alt="{{ $row->service_name }}">
+                  <div class="project-hover"><a href="{{ url($row->service_slug) }}"><i
+                        class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+                <div class="project-content">
+                  <h3 class="mb-10">{{ $row->service_name }}</h3>
+                  <a class="blog-btn" href="{{ url($row->service_slug) }}">Read more <i
+                      class="fa-solid fa-arrow-right"></i></a>
+                  {{-- <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
+                    the right studies.</p> --}}
                 </div>
               </div>
-              <div class="project-content">
-                <h3 class="mb-10">Clinical Operation</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/medical-writing.jpg" alt="Medical Writing">
-                <div class="project-hover"><a href="medical-writing.html"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Medical Writing</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/pharmacovigilance.jpg" alt="Pharmacovigilance">
-                <div class="project-hover"><a href="pharmacovigilance.html"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Pharmacovigilance</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/quality-assurance.jpg" alt="Quality Assurance">
-                <div class="project-hover"><a href="quality-assurance.html"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Quality Assurance</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/medical-affairs.jpg" alt="Medical Affair">
-                <div class="project-hover"><a href="medical-affairs.html"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Medical Affair</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/biostatistics-programming.jpg"
-                  alt="Biostatistics and Programming">
-                <div class="project-hover"><a href="biostatistics-programming.html"><i
-                      class="fa-solid fa-arrow-right"></i></a></div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Biostatistics and Programming</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/regulatory-affairs.jpg" alt="Regulatory Ventures">
-                <div class="project-hover"><a href="regulatory-affairs.html"><i
-                      class="fa-solid fa-arrow-right"></i></a></div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Regulatory Ventures</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
-
-            <div class="project-single">
-              <div class="project-img">
-                <img src="{{ url('/web') }}/assets/img/services/data-management.jpg" alt="Data Management">
-                <div class="project-hover"><a href="data-management.html"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="mb-10">Data Management</h3>
-                <p>INNYATCRO provides critical preclinical research data and innovative solutions through the conduct of
-                  the right studies.</p>
-              </div>
-            </div>
+            @endforeach
 
           </div>
         </div>
@@ -273,54 +171,65 @@
 
         <div class="col-lg-6">
           <div class="get-appointment-form style-2">
-            <form action="#">
+            <form id="contact-for" action="{{ url('inquiry/contact-us/') }}/" method="POST">
+              @csrf
+              <input type="hidden" name="source" value="contact-us">
+              <input type="hidden" name="source_path" value="{{ URL::full() }}">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                   <div class="single-field">
-                    <label for="yourname">Your Name</label>
-                    <input type="text" placeholder="Write your name" name="yourname">
+                    <label for="name">Your Name</label>
+                    <input type="text" placeholder="Write your name" name="name" id="name"
+                      value="{{ old('name') }}">
+                    @error('name')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                   <div class="single-field">
-                    <label for="mobile">Your Email</label>
-                    <input type="email" placeholder="example123@gmail.com" name="email" id="email">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" placeholder="+66 555 666 888 22" name="mobile" id="mobile"
+                      value="{{ old('mobile') }}">
+                    @error('mobile')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                   <div class="single-field">
-                    <label for="mobile">Phone Number</label>
-                    <input type="text" placeholder="+66 555 666 888 22" name="mobile" id="mobile">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="example@gmail.com" name="email" id="email"
+                      value="{{ old('email') }}">
+                    @error('email')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                   <div class="single-field">
-                    <label for="depname">Service</label>
-                    <select name="depname">
+                    <label for="service_id">Service</label>
+                    <select name="service_id" id="service_id">
                       <option>Select Service</option>
-                      <option value="">Pre-clinical Operations</option>
-                      <option value="">Clinical Operation</option>
-                      <option value="">Medical Writing</option>
-                      <option value="">Pharmacovigilance</option>
-                      <option value="">Quality Assurance</option>
-                      <option value="">Medical Affairs</option>
-                      <option value="">Biostatistics & Programming</option>
-                      <option value="">Regulatory Affairs</option>
-                      <option value="">Data Management</option>
+                      @foreach ($services as $row)
+                        <option value="{{ $row->id }}">{{ $row->service_name }}</option>
+                      @endforeach
                     </select>
                   </div>
                 </div>
-
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                   <div class="single-field">
-                    <label for="yourmessage">Message</label>
-                    <textarea placeholder="Write Your Message" name="yourmessage" cols="30" rows="10"></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write Your Message" id="message">{{ old('message') }}</textarea>
+                    @error('message')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
                 <!-- Single -->
                 <div class="col-lg-12 mt-30">
                   <div class="single-field">
-                    <button class="button-1">Send Now <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="button-1" type="submit">Send Now <i class="fa-solid fa-arrow-right"></i></button>
                   </div>
                 </div>
               </div>

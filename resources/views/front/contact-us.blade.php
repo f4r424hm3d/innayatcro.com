@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="single-field">
-                        <label for="service_id">Email</label>
+                        <label for="service_id">Service</label>
                         <select name="service_id" id="service_id">
                           <option>Select Service</option>
                           @foreach ($services as $row)
@@ -98,7 +98,7 @@
                     </div>
                     <div class="col-sm-12">
                       <div class="single-field">
-                        <label for="message">Email</label>
+                        <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Write Your Message" id="message">{{ old('message') }}</textarea>
                         @error('message')
                           <span class="text-danger">{{ $message }}</span>

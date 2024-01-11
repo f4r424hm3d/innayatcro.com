@@ -62,7 +62,6 @@ class GalleryC extends Controller
   }
   public function delete($id)
   {
-    //echo $id;
     echo $result = Gallery::find($id)->delete();
   }
   public function update($id, Request $request)

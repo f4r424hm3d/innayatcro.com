@@ -50,8 +50,12 @@
                 <h2>Have Questions? <br> Get in Touch!</h2>
               </div>
               <div class="get-appointment-form">
-                <form id="contact-for" action="{{ url('inquiry/contact-us/') }}/" method="POST">
+                @error('g-recaptcha-response')
+                  <span class="text-danger">{{ $message }}</span>
+                @enderror
+                <form id="contact-for" action="{{ route('contactus') }}" method="POST">
                   @csrf
+                  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                   <input type="hidden" name="source" value="contact-us">
                   <input type="hidden" name="source_path" value="{{ URL::full() }}">
                   <div class="row">
@@ -94,6 +98,9 @@
                             <option value="{{ $row->id }}">{{ $row->service_name }}</option>
                           @endforeach
                         </select>
+                        @error('service_id')
+                          <span class="text-danger">{{ $message }}</span>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-sm-12">
@@ -137,4 +144,15 @@
 
   </div>
   <!-- End Map Area -->
+  <script>
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LdJY00pAAAAAG9ZbnKhYWi9vHMbtKaVFvF7RH82', {
+          action: 'contact_us'
+        })
+        .then(function(token) {
+          // Set the reCAPTCHA token in the hidden input field
+          document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+  </script>
 @endsection

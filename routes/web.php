@@ -4,36 +4,11 @@ use App\Http\Controllers\admin\AddressC;
 use App\Http\Controllers\admin\AdminDashboard;
 use App\Http\Controllers\admin\AdminLogin;
 use App\Http\Controllers\admin\AuthorC;
-use App\Http\Controllers\admin\CourseCategoryC;
-use App\Http\Controllers\admin\CourseModeC;
-use App\Http\Controllers\admin\CourseSpecializationC;
-use App\Http\Controllers\admin\DefaultSeoC;
-use App\Http\Controllers\admin\DestinationC;
-use App\Http\Controllers\admin\DestinationContentC;
-use App\Http\Controllers\admin\DestinationGalleryC;
-use App\Http\Controllers\admin\DestinationPageFaqC;
-use App\Http\Controllers\admin\DestinationTabC;
-use App\Http\Controllers\admin\ExamC;
-use App\Http\Controllers\admin\ExamPageC;
-use App\Http\Controllers\admin\ExamPageContentC;
-use App\Http\Controllers\admin\ExamPageFaqC;
-use App\Http\Controllers\admin\InstituteTypeC;
-use App\Http\Controllers\admin\LevelC;
-use App\Http\Controllers\admin\NewsC;
-use App\Http\Controllers\admin\NewsCategoryC;
-use App\Http\Controllers\admin\ProgramC;
 use App\Http\Controllers\admin\SeoC;
 use App\Http\Controllers\admin\TreatmentC;
 use App\Http\Controllers\admin\ServiceContentC;
-use App\Http\Controllers\admin\StudyModeC;
-use App\Http\Controllers\admin\TestimonialC;
-use App\Http\Controllers\admin\UniversityC;
-use App\Http\Controllers\admin\UniversityGalleryC;
-use App\Http\Controllers\admin\UniversityOverviewC;
-use App\Http\Controllers\admin\UniversityVideoGalleryC;
 use App\Http\Controllers\admin\UserC;
 use App\Http\Controllers\CommonController;
-use App\Http\Controllers\sitemap\SitemapController;
 use App\Http\Controllers\AboutFc;
 use App\Http\Controllers\admin\BlogC;
 use App\Http\Controllers\admin\BlogCategoryC;
@@ -49,10 +24,8 @@ use App\Http\Controllers\GalleryFc;
 use App\Http\Controllers\HomeFc;
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\ServiceFc;
-use App\Http\Controllers\TreatmentFc;
 use App\Models\Blog;
 use App\Models\Service;
-use App\Models\Treatment;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -141,7 +114,7 @@ foreach ($blogs as $row) {
   Route::get('/' . $row->slug, [BlogFc::class, 'blogdetail']);
 }
 
-Route::post('inquiry/contact-us', [InquiryController::class, 'submitContactUs']);
+Route::post('inquiry/contact-us', [InquiryController::class, 'submitContactUs'])->name('contactus');
 Route::post('inquiry/appointment', [InquiryController::class, 'appointment']);
 
 /* ADMIN ROUTES BEFORE LOGIN */

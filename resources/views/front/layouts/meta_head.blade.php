@@ -4,7 +4,7 @@
 <meta name="description" content="<?php echo $meta_description; ?>">
 <meta name="keywords" content="<?php echo $meta_keyword; ?>">
 <link rel="canonical" href="<?php echo $page_url; ?>" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
 <meta name="copyright" content="Innayat CRO" />
 <meta name="email" content="info@innayatcro.com" />
 <meta name="Distribution" content="Global" />
@@ -34,3 +34,5 @@
 <link rel="stylesheet" href="{{ url('web/') }}/assets/css/animate.css">
 <link rel="stylesheet" href="{{ url('web/') }}/style.css">
 <link rel="stylesheet" href="{{ url('web/') }}/assets/css/responsive.css">
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LdJY00pAAAAAG9ZbnKhYWi9vHMbtKaVFvF7RH82"></script>

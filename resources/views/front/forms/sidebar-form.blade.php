@@ -3,6 +3,7 @@
   <div class="get-appointment-form">
     <form action="{{ url('inquiry/appointment/') }}/" method="post">
       @csrf
+      <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
       <input type="hidden" name="source" value="appointment">
       <input type="hidden" name="source_path" value="{{ URL::full() }}">
 
@@ -52,3 +53,14 @@
     </form>
   </div>
 </div>
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LdJY00pAAAAAG9ZbnKhYWi9vHMbtKaVFvF7RH82', {
+        action: 'appoinment'
+      })
+      .then(function(token) {
+        // Set the reCAPTCHA token in the hidden input field
+        document.getElementById('g-recaptcha-response').value = token;
+      });
+  });
+</script>

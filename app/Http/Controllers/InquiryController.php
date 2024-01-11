@@ -16,7 +16,7 @@ class InquiryController extends Controller
     // die;
     $request->validate(
       [
-        'g-recaptcha-response' => 'required|captcha:contact_us',
+        'g-recaptcha-response' => 'required',
         'service_id' => 'required|numeric',
         'name' => 'required',
         'mobile' => 'required|numeric',
@@ -90,6 +90,7 @@ class InquiryController extends Controller
     // die;
     $request->validate(
       [
+        'g-recaptcha-response' => 'required',
         'service_id' => 'required|numeric',
         'appointment_date' => 'required|date',
         'name' => 'required',

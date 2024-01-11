@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use App\Models\Country;
 use App\Models\Lead;
 use App\Models\Service;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
-use Mail;
 
 class InquiryController extends Controller
 {

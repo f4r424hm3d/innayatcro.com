@@ -19,7 +19,7 @@ class ServiceFc extends Controller
     $slug = $request->segment(1);
     $service = Service::where('service_slug', $slug)->firstOrFail();
     $services = Service::where('id', '!=', $service->id)->limit(10)->get();
-    $allTr = Service::all();
+    $allServices = Service::all();
 
     $page_url = url()->current();
 
@@ -48,7 +48,7 @@ class ServiceFc extends Controller
 
     $og_image_path = $service->thumbnail_path == '' ? $dseo->og_image_path : $service->thumbnail_path;
 
-    $data = compact('services', 'service', 'page_url', 'dseo', 'sub_slug', 'site', 'meta_title', 'meta_keyword', 'page_content', 'meta_description', 'og_image_path', 'allTr');
+    $data = compact('services', 'service', 'page_url', 'dseo', 'sub_slug', 'site', 'meta_title', 'meta_keyword', 'page_content', 'meta_description', 'og_image_path', 'allServices');
     return view('front.service-detail')->with($data);
   }
 }

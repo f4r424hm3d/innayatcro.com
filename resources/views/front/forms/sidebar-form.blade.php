@@ -1,7 +1,19 @@
 <div class="sidebar-single-widget widget-appointment mb-30">
   <h5 class="pb-20">Make an appointment</h5>
   <div class="get-appointment-form">
-    <form action="{{ url('inquiry/appointment/') }}/" method="post">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+    @error('g-recaptcha-response')
+      <span class="text-danger">{{ $message }}</span>
+    @enderror
+    <form action="{{ url('inquiry/appointment') }}" method="post">
       @csrf
       <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
       <input type="hidden" name="source" value="appointment">
@@ -32,10 +44,17 @@
       <div class="single-field">
         <select name="service_id" id="service_id">
           <option>Select Service</option>
-          @foreach ($allTr as $row)
-            <option value="{{ $row->id }}">{{ $row->service_name }}</option>
+          @foreach ($allServices as $row)
+            <option value="{{ $row->id }}" {{ old('service_id') == $row->id ? 'selected' : '' }}>
+              {{ $row->service_name }}</option>
           @endforeach
         </select>
+      </div>
+      <div class="single-field">
+        <input type="date" name="appointment_date" id="appointment_date" value="{{ old('appointment_date') }}">
+        @error('appointment_date')
+          <span class="text-danger">{{ $message }}</span>
+        @enderror
       </div>
 
       <div class="single-field">
@@ -56,7 +75,7 @@
 <script>
   grecaptcha.ready(function() {
     grecaptcha.execute('6LdJY00pAAAAAG9ZbnKhYWi9vHMbtKaVFvF7RH82', {
-        action: 'appoinment'
+        action: 'appointment_sidebar'
       })
       .then(function(token) {
         // Set the reCAPTCHA token in the hidden input field

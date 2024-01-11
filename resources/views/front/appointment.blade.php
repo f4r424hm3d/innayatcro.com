@@ -42,25 +42,16 @@
 
                 <div class="col-lg-3 col-sm-6">
                   <div class="single-field">
-                    <label for="treatment_id">Treatment</label>
-                    <select name="treatment_id" id="treatment_id">
-                      <option>Select Treatment</option>
-                      @foreach ($treatments as $row)
-                        <option value="{{ $row->id }}">{{ $row->treatment_name }}</option>
+                    <label for="service_id">Service</label>
+                    <select name="service_id" id="service_id">
+                      <option>Select Service</option>
+                      @foreach ($services as $row)
+                        <option value="{{ $row->id }}" {{ old('service_id') == $row->id ? 'selected' : '' }}>
+                          {{ $row->service_name }}</option>
                       @endforeach
                     </select>
                   </div>
                 </div>
-
-                {{-- <div class="col-lg-3 col-sm-6">
-                  <div class="single-field">
-                    <label for="docname">Doctor</label>
-                    <select name="docname" id="docname">
-                      <option>Select Doctor</option>
-                      <option value="">Dr. Jaya Balan</option>
-                    </select>
-                  </div>
-                </div> --}}
 
                 <div class="col-lg-3 col-sm-6">
                   <div class="single-field">

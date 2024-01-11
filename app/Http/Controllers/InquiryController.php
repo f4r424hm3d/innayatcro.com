@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\Lead;
+use App\Models\Service;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
 use Mail;
@@ -117,7 +118,7 @@ class InquiryController extends Controller
     $field->save();
     session()->flash('smsg', 'Your inquiry has been submitted succesfully. We will contact you soon.');
 
-    $tr = Treatment::find($request['service_id']);
+    $tr = Service::find($request['service_id']);
 
     $emaildata = [
       'name' => $request['name'],
